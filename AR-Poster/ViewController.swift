@@ -23,11 +23,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        // Image recognized
         
-        // Set the scene to the view
-        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +32,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "PosterImage", bundle: Bundle.main) {
+            configuration.detectionImages = trackedImages
+            configuration.maximumNumberOfTrackedImages = 1 // one detection at a time
+        }
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -58,18 +60,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 */
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        // anchor is image found
+        let node = SCNNode()
         
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
+        if let  imageAnchor = anchor as? ARImageAnchor {
+            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+            plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+            let planeNode = SCNNode(geometry: plane)
+            
+            // rotate counterclockwise so it's flat
+            planeNode.eulerAngles.x = -.pi/2
+            
+            // add subview to node
+            node.addChildNode(planeNode)
+        }
         
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+        // return scene
+        return node
     }
 }

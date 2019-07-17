@@ -13,6 +13,7 @@
 		8A0304E922DEBD0E00EE59A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0304E722DEBD0E00EE59A0 /* Main.storyboard */; };
 		8A0304EB22DEBD1000EE59A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0304EA22DEBD1000EE59A0 /* Assets.xcassets */; };
 		8A0304EE22DEBD1000EE59A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0304EC22DEBD1000EE59A0 /* LaunchScreen.storyboard */; };
+		8A0304FA22DECB3F00EE59A0 /* poster.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0304F922DECB3F00EE59A0 /* poster.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8A0304EA22DEBD1000EE59A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A0304ED22DEBD1000EE59A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A0304EF22DEBD1000EE59A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A0304F922DECB3F00EE59A0 /* poster.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = poster.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8A0304E122DEBD0E00EE59A0 /* AppDelegate.swift */,
 				8A0304E322DEBD0E00EE59A0 /* art.scnassets */,
 				8A0304E522DEBD0E00EE59A0 /* ViewController.swift */,
+				8A0304F922DECB3F00EE59A0 /* poster.mp4 */,
 				8A0304E722DEBD0E00EE59A0 /* Main.storyboard */,
 				8A0304EA22DEBD1000EE59A0 /* Assets.xcassets */,
 				8A0304EC22DEBD1000EE59A0 /* LaunchScreen.storyboard */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A0304E422DEBD0E00EE59A0 /* art.scnassets in Resources */,
+				8A0304FA22DECB3F00EE59A0 /* poster.mp4 in Resources */,
 				8A0304EE22DEBD1000EE59A0 /* LaunchScreen.storyboard in Resources */,
 				8A0304EB22DEBD1000EE59A0 /* Assets.xcassets in Resources */,
 				8A0304E922DEBD0E00EE59A0 /* Main.storyboard in Resources */,

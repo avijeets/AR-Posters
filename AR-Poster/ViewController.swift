@@ -22,9 +22,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
-        // Image recognized
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,25 +45,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         // anchor is image found
         let node = SCNNode()
         
         if let  imageAnchor = anchor as? ARImageAnchor {
+            
             let videoNode = SKVideoNode(fileNamed: "poster.mp4")
             videoNode.play()
+            
             // 360p -> 480 x 360
             let videoScene = SKScene(size: CGSize(width: 480, height: 360))
             videoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2)
